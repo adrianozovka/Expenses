@@ -21,13 +21,15 @@ ng build --prod
 
 To access dist/Expenses
 
-create file manifest.yml
+create empty file "Staticfile.txt"
+
+create file "manifest.yml"
 write:
 ---
 applications:
 - name: expenses2017
   memory: 512M
-  disk_space: 2048
+  disk_space: 1024
   instance: 1
   buildpack: staticfile_buildpack
   
