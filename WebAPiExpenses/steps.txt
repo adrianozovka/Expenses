@@ -1,0 +1,39 @@
+To access the project root folder
+
+dotnet publish -c Release -o ./publish
+
+cd publish
+
+cf login -a https://api.run.pivotal.io
+
+put email account and password
+
+cf push WebAPiExpenses
+
+after completed, the url mentioned in the routes is your app url.
+
+In this case, url created was webapiexpenses.cfapps.io
+
+----------------------------------------------------------------------------
+To access the project root folder
+
+ng build --prod
+
+To access dist/Expenses
+
+create file manifest.yml
+write:
+---
+applications:
+- name: expenses2017
+  memory: 512M
+  disk_space: 2048
+  instance: 1
+  buildpack: staticfile_buildpack
+  
+  
+cf push
+
+after completed, the url mentioned in the routes is your app url.
+
+In this case, url created was expenses2017.cfapps.io as mentioned in manifest.yml

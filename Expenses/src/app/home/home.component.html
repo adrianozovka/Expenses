@@ -1,0 +1,27 @@
+<section style="margin: 10% auto">
+  <div class="login-logo">
+    <b>Expense</b> | Login
+  </div>
+  <div >
+    <p>Por favor, efetue o login para continuar</p>
+    <form [formGroup]="loginForm">
+   
+        <input type="text" formControlName="username" placeholder="Username">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  
+
+   
+        <input type="password" formControlName="password" placeholder="Password">
+        <span></span>
+   
+
+      <div class="row">
+        <!-- /.col -->
+        <div >
+          <button type="submit" [disabled]="loginForm.invalid" (click)="login()" >Entrar</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+  </div>
+</section>

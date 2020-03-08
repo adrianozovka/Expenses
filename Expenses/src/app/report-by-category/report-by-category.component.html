@@ -1,0 +1,21 @@
+
+<table datatable id="dtable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr *ngIf="expenses.length !== 0">
+      <th>Categoria</th>
+      <th>Valor Pago</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let expense of expenses">
+      <td>{{ expense.categoryName }}</td>
+      <td>{{ expense.amountPaid | currency: 'BRL' : true}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p-chart type="doughnut" [data]="data" [options]="options" width="400" height="500"></p-chart>
+
+
+
+

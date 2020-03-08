@@ -1,0 +1,23 @@
+
+      <table datatable id="dtable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+        <thead>
+          <tr *ngIf="expenses.length !== 0">
+            <th>Ano</th>
+            <th>Mês</th>
+            <th>Valor Pago</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expense of expenses">
+            <td>{{ expense.movimentYear }}</td>
+            <td>{{ expense.movimentMonthDescription }}</td>
+            <td>{{ expense.amountPaid | currency: 'BRL' : true}}</td>
+          </tr>
+        </tbody>
+      </table>
+   
+        <p-chart type="bar" [data]="data" [options]="options" width="400" height="500"  ></p-chart>
+      
+
+
+
