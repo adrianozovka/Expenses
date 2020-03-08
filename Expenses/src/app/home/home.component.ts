@@ -42,8 +42,7 @@ export class HomeComponent implements OnInit {
       response => //HttpErrorResponse
         this.error = response.error.message,       
       () => {
-        console.log("navigate" + [atob(this.navigateTo)]),
-        this.router.navigate([atob(this.navigateTo)])
+         this.router.navigate([atob(this.navigateTo)])
         
       }
     )

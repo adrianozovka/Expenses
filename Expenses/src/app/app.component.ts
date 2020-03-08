@@ -36,7 +36,7 @@ export class AppComponent {
 
 
   isLoggedIn(): boolean {
-    console.log("AppComponent isLoggedIn() " + this.loginService.isLoggedIn());
+    
     this.isLoggedin = this.loginService.isLoggedIn();
     return this.isLoggedin;
   }

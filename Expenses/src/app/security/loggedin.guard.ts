@@ -11,20 +11,17 @@ export class LoggedInGuard implements CanLoad, CanActivate {
     const loggedin = this.loginService.isLoggedIn()
 
     if (!loggedin) {
-      console.log(`Caminho checkAuthentication ${path}`);
-      this.loginService.handleLogin(`/${path}`);
+        this.loginService.handleLogin(`/${path}`);
     }
 
     return loggedin;
   }
 
   canLoad(route: Route): boolean {
-    console.log(`Caminho canLoad ${route.path}`);
     return this.checkAuthentication(route.path)
   }
 
   canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, routerStateSnapshot: RouterStateSnapshot) {
-    console.log(`Caminho canActivate ${activatedRouteSnapshot.routeConfig.path}`);
     return this.checkAuthentication(activatedRouteSnapshot.routeConfig.path)
   }
 
