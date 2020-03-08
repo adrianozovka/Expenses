@@ -41,4 +41,12 @@ In this case, url created was expenses2017.cfapps.io as mentioned in manifest.ym
 
 -----------------------------------------------------------------------------
 
+git pull origin master --allow-unrelated-histories
+
+git add *
+
+
+git commit -m "comment"
+
+
 git push origin master
