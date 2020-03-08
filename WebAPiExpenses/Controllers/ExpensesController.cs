@@ -17,7 +17,7 @@ namespace WebAPiExpenses.Controllers
             _expenseRepositorio = expenseRepo;
         }
 
-        [HttpGet(Name="GetTotalExpensesPerMonth")]    
+        [HttpGet]    
         [Route("GetTotalExpensesPerMonth/")]  
         [Authorize]
           public List<Expense> getTotalExpensesPerMonth()
@@ -25,7 +25,7 @@ namespace WebAPiExpenses.Controllers
             return _expenseRepositorio.getTotalExpensesPerMonth();
         }
 
-        [HttpGet(Name="GetTotalExpensesPerCategory")]
+        [HttpGet]
         [Route("GetTotalExpensesPerCategory/")]
         [Authorize]
         public List<Expense> getTotalExpensesPerCategory()
@@ -33,7 +33,7 @@ namespace WebAPiExpenses.Controllers
             return _expenseRepositorio.getTotalExpensesPerCategory();
         }
 
-        [HttpGet(Name="GetPaymentPerSource")]
+        [HttpGet]
         [Route("GetPaymentPerSource/")]
         [Authorize]
           public List<Expense> getPaymentPerSource()

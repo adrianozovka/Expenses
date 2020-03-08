@@ -53,3 +53,9 @@ git commit -m "comment"
 
 
 git push origin master
+
+-------------------------------------------------------------------------------
+
+https://localhost:5001/swagger/v1/swagger.json
+
+https://localhost:5001/swagger/
