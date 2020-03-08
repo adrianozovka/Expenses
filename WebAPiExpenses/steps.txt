@@ -37,3 +37,8 @@ cf push
 after completed, the url mentioned in the routes is your app url.
 
 In this case, url created was expenses2017.cfapps.io as mentioned in manifest.yml
+
+
+-----------------------------------------------------------------------------
+
+git push origin master
