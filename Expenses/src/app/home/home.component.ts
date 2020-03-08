@@ -12,16 +12,17 @@ export class HomeComponent implements OnInit {
 
   loginForm: FormGroup
   navigateTo: string
+  error: string
 
   constructor(private fb: FormBuilder, private loginService: LoginService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.loginService.logout();
-    console.log("logout");
+    this.error = '';
   }
 
   ngOnInit() {
 
    
-
+    this.error = '';
     this.loginForm = this.fb.group(
       {
         username: this.fb.control('', [Validators.required]),
@@ -37,9 +38,9 @@ export class HomeComponent implements OnInit {
   login() {
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(
       loginAccess =>
-               console.log("login " + loginAccess.user.username),
+        console.log("login " + loginAccess.user.username),
       response => //HttpErrorResponse
-              console.log(response.error.message),
+        this.error = response.error.message,       
       () => {
         console.log("navigate" + [atob(this.navigateTo)]),
         this.router.navigate([atob(this.navigateTo)])
