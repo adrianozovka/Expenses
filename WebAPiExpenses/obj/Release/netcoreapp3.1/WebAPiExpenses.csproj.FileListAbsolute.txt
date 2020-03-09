@@ -25,3 +25,13 @@ C:\Codigo\WebAPiExpenses\obj\Release\netcoreapp3.1\staticwebassets\WebAPiExpense
 C:\Codigo\WebAPiExpenses\obj\Release\netcoreapp3.1\staticwebassets\WebAPiExpenses.StaticWebAssets.xml
 C:\Codigo\WebAPiExpenses\obj\Release\netcoreapp3.1\WebAPiExpenses.dll
 C:\Codigo\WebAPiExpenses\obj\Release\netcoreapp3.1\WebAPiExpenses.pdb
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\publish\web.config
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\publish\appsettings.Development.json
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\publish\appsettings.json
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\publish\WebAPiExpenses.deps.json
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\publish\WebAPiExpenses.runtimeconfig.json
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Codigo\WebAPiExpenses\bin\Release\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Codigo\WebAPiExpenses\obj\Release\netcoreapp3.1\WebAPiExpenses.MvcApplicationPartsAssemblyInfo.cs

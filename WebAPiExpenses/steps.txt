@@ -55,7 +55,17 @@ git commit -m "comment"
 git push origin master
 
 -------------------------------------------------------------------------------
-
+--Generate json documentation
 https://localhost:5001/swagger/v1/swagger.json
 
+to access swagger documentation local
 https://localhost:5001/swagger/
+
+to access swagger documentation on pcf
+https://webapiexpenses.cfapps.io/swagger/index.html
+
+Generate documentation to angular
+source: https://www.vojtechruzicka.com/documenting-angular-apps-with-typedoc-compodoc-and-angulardoc/
+
+to access swagger (frontend angular) documentation  on pcf
+http://expenses2017.cfapps.io/documentation/
