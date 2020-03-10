@@ -30,6 +30,8 @@ export class ReportByMonthComponent implements OnDestroy, OnInit {
   dtTrigger: Subject<object> = new Subject<object>();
   orderOptions: number[] = [1];
 
+  error: string;
+
   constructor(private expenseService: ExpenseService) {
      this.data = {
             labels: [],
@@ -48,6 +50,8 @@ export class ReportByMonthComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
+    this.error = '';
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 12,
@@ -63,9 +67,9 @@ export class ReportByMonthComponent implements OnDestroy, OnInit {
 
     
     this.expenseService.getReportPerMonth()
-      .subscribe(expenses => {
+      .subscribe(expenses => {     
 
-        this.expenses = expenses;
+        this.expenses = expenses.lstExpense;
 
         this.feedChart(this.expenses);
 
@@ -76,14 +80,16 @@ export class ReportByMonthComponent implements OnDestroy, OnInit {
   }
 
   feedChart(expenses: Expenses[]) {
-    expenses.sort((a, b) => (a.movimentMonthDescription < b.movimentMonthDescription) ? -1 : 1);
-  
-    for (var index in expenses) {
-      this.labelsChart.push(expenses[index].movimentMonthDescription);
-      this.dataChart.push(expenses[index].amountPaid);     
+    if (expenses !== null && expenses.length > 0) {
+      expenses.sort((a, b) => (a.movimentMonthDescription < b.movimentMonthDescription) ? -1 : 1);
+
+      for (var index in expenses) {
+        this.labelsChart.push(expenses[index].movimentMonthDescription);
+        this.dataChart.push(expenses[index].amountPaid);
+      }
+      this.data.labels = this.labelsChart;
+      this.data.datasets[0].data = this.dataChart;
     }
-    this.data.labels = this.labelsChart;
-    this.data.datasets[0].data = this.dataChart;
   }
 
   ngOnDestroy(): void {

@@ -67,7 +67,7 @@ export class ReportByCategoryComponent implements OnInit {
     this.expenseService.getReportTotalExpensesPerCategory()
       .subscribe(expenses => {
 
-        this.expenses = expenses;
+        this.expenses = expenses.lstExpense;
 
         this.feedChart(this.expenses);
 
@@ -78,14 +78,16 @@ export class ReportByCategoryComponent implements OnInit {
   }
 
   feedChart(expenses: Expenses[]) {
-    expenses.sort((a, b) => (a.categoryName < b.categoryName) ? -1 : 1);
+    if (expenses !== null && expenses.length > 0) {
+      expenses.sort((a, b) => (a.categoryName < b.categoryName) ? -1 : 1);
 
-    for (var index in expenses) {
-      this.labelsChart.push(expenses[index].categoryName);
-      this.dataChart.push(expenses[index].amountPaid);
+      for (var index in expenses) {
+        this.labelsChart.push(expenses[index].categoryName);
+        this.dataChart.push(expenses[index].amountPaid);
+      }
+      this.data.labels = this.labelsChart;
+      this.data.datasets[0].data = this.dataChart;
     }
-    this.data.labels = this.labelsChart;
-    this.data.datasets[0].data = this.dataChart;
   }
 
   ngOnDestroy(): void {

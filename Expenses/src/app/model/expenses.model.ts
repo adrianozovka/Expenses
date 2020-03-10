@@ -11,3 +11,9 @@ export interface Expenses {
 }
 
 
+export interface APIExpenseResult {
+
+  resultCode: string,       
+  resultDescription: string,              
+  lstExpense: Expenses[]  
+}

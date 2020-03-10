@@ -1,7 +1,7 @@
 
 <table datatable id="dtable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
   <thead>
-    <tr *ngIf="expenses.length !== 0">
+    <tr *ngIf="expenses !== null && expenses.length !== 0">
       <th>Fonte</th>
       <th>Valor Pago</th>
     </tr>

@@ -1,13 +1,13 @@
 
       <table datatable id="dtable" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
         <thead>
-          <tr *ngIf="expenses.length !== 0">
+          <tr *ngIf="expenses !== null && expenses.length !== 0">
             <th>Ano</th>
             <th>Mês</th>
             <th>Valor Pago</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           <tr *ngFor="let expense of expenses">
             <td>{{ expense.movimentYear }}</td>
             <td>{{ expense.movimentMonthDescription }}</td>
@@ -16,7 +16,7 @@
         </tbody>
       </table>
    
-        <p-chart type="bar" [data]="data" [options]="options" width="600" height="600"  ></p-chart>
+       <p-chart type="bar" [data]="data" [options]="options" width="600" height="600"  ></p-chart>
       
 
 

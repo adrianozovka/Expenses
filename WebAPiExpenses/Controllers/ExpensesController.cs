@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApiExpenses.Model;
 using WebAPiExpenses.Repository;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace WebAPiExpenses.Controllers
 {
@@ -20,25 +21,69 @@ namespace WebAPiExpenses.Controllers
         [HttpGet]    
         [Route("GetTotalExpensesPerMonth/")]  
         [Authorize]
-          public List<Expense> getTotalExpensesPerMonth()
+          public APIExpenseResult getTotalExpensesPerMonth()
         {
-            return _expenseRepositorio.getTotalExpensesPerMonth();
+            APIExpenseResult result = new APIExpenseResult();
+
+            try{
+                List<Expense> lst  = _expenseRepositorio.getTotalExpensesPerMonth();
+                result.lstExpense = lst;
+                result.resultCode= "OK";                
+
+            }catch(Exception ex)
+            {
+                  result.resultCode= "ERROR";    
+                  result.resultDescription = ex.Message;
+            }
+        
+
+            return result;
         }
 
         [HttpGet]
         [Route("GetTotalExpensesPerCategory/")]
         [Authorize]
-        public List<Expense> getTotalExpensesPerCategory()
+        public APIExpenseResult getTotalExpensesPerCategory()
         {
-            return _expenseRepositorio.getTotalExpensesPerCategory();
+            APIExpenseResult result = new APIExpenseResult();
+
+            try{
+                List<Expense> lst  = _expenseRepositorio.getTotalExpensesPerCategory();
+                result.lstExpense = lst;
+                result.resultCode= "OK";                
+
+            }catch(Exception ex)
+            {
+                  result.resultCode= "ERROR";    
+                  result.resultDescription = ex.Message;
+            }
+        
+
+            return result;
         }
 
         [HttpGet]
         [Route("GetPaymentPerSource/")]
         [Authorize]
-          public List<Expense> getPaymentPerSource()
+        public APIExpenseResult getPaymentPerSource()
         {
-            return _expenseRepositorio.getPaymentPerSource();
+            APIExpenseResult result = new APIExpenseResult();
+
+            try{
+                
+                List<Expense> lst  = _expenseRepositorio.getPaymentPerSource();
+                result.lstExpense = lst;
+                result.resultCode= "OK";                
+
+            }catch(Exception ex)
+            {
+                  result.resultCode= "ERROR";    
+                  result.resultDescription = ex.Message;
+            }        
+
+            return result;
+
+            
         }
     }
 }

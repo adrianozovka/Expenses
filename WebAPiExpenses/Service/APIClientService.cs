@@ -10,6 +10,8 @@ using WebApiExpenses.Model;
 using WebApiExpenses.Util;
 using WebAPiExpenses.Util;
 using WebAPiExpenses;
+using System.Net.Http;
+using System.Net;
 
 namespace WebApiExpenses.Service
 {
