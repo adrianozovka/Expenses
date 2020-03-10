@@ -17,8 +17,7 @@ namespace WebAPiExpenses.Repository
          static List<Expense> lstPaymentPerSource;
 
         public List<Expense> getPaymentPerSource()
-        {
-        
+        {        
 
             if(lstPaymentPerSource == null)
             {      
