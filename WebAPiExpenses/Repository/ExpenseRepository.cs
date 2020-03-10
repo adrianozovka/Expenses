@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using WebApiExpenses.ApiClient;
 using WebApiExpenses.Model;
-using WebApiExpenses.Service;
 using WebAPiExpenses.Util;
 
 namespace WebAPiExpenses.Repository
@@ -24,7 +24,7 @@ namespace WebAPiExpenses.Repository
             {      
                 List<ExpenseAPI> lst = new List<ExpenseAPI>();
 
-                lst =  APIClientService.getPaymentPerSource();
+                lst =  APIClient.getPaymentPerSource();
 
                 lstPaymentPerSource =  new List<Expense>();
                 try
@@ -77,7 +77,7 @@ namespace WebAPiExpenses.Repository
             {   
                 List<ExpenseAPI> lst = new List<ExpenseAPI>();
 
-                lst =  APIClientService.getTotalExpensesPerCategory();         
+                lst =  APIClient.getTotalExpensesPerCategory();         
 
                 lstTotalExpensesPerCategory = new List<Expense>();
                 try
@@ -127,7 +127,7 @@ namespace WebAPiExpenses.Repository
             {      
                 List<ExpenseAPI> lst = new List<ExpenseAPI>();
 
-                lst =  APIClientService.getTotalExpensesPerMonth();
+                lst =  APIClient.getTotalExpensesPerMonth();
 
                 lstTotalExpensesPerMonth= new List<Expense>();
                 try

@@ -23,14 +23,22 @@ namespace WebAPiExpenses.Controllers
         [Authorize]
         public ActionResult<List<Expense>> getTotalExpensesPerMonth()
         {          
-            List<Expense> lst  = _expenseService.getTotalExpensesPerMonth();    
+            List<Expense> lst = null;
+            try
+            {
+                lst  = _expenseService.getTotalExpensesPerMonth();    
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
             if(lst == null)
             {
                 return NotFound();
             }
 
-            return Ok(lst);         
+            return Ok(lst);          
 
             
         }
@@ -40,7 +48,15 @@ namespace WebAPiExpenses.Controllers
         [Authorize]
         public ActionResult<List<Expense>> getTotalExpensesPerCategory()
         {
-            List<Expense> lst  = _expenseService.getTotalExpensesPerCategory();    
+            List<Expense> lst = null;
+            try
+            {
+                 lst  = _expenseService.getTotalExpensesPerCategory();    
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
             if(lst == null)
             {
@@ -56,7 +72,15 @@ namespace WebAPiExpenses.Controllers
         [Authorize]
         public ActionResult<List<Expense>> getPaymentPerSource()
         {
-            List<Expense> lst  = _expenseService.getPaymentPerSource();    
+            List<Expense> lst = null;
+            try
+            {
+                lst  = _expenseService.getPaymentPerSource();    
+            }
+             catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
 
             if(lst == null)
             {

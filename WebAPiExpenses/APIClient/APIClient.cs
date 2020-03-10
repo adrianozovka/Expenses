@@ -13,9 +13,9 @@ using WebAPiExpenses;
 using System.Net.Http;
 using System.Net;
 
-namespace WebApiExpenses.Service
+namespace WebApiExpenses.ApiClient
 {
-    public static class APIClientService
+    public static class APIClient
     {
         private static string _urlBase =  Setting.HostQuery;
         static RestClient client = new RestClient(_urlBase);
