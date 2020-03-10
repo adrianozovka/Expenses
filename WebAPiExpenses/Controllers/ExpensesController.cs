@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WebApiExpenses.Model;
-using WebAPiExpenses.Repository;
+using WebAPiExpenses.Service;
 using Microsoft.AspNetCore.Authorization;
 using System;
 
@@ -10,78 +10,60 @@ namespace WebAPiExpenses.Controllers
     [Route("api/[Controller]")]
     public class ExpensesController : Controller
     {
-        private readonly IExpenseRepository _expenseRepositorio;
+        private readonly IExpenseService _expenseService;
 
 
-        public ExpensesController(IExpenseRepository expenseRepo)
+        public ExpensesController(IExpenseService expenseService)
         {
-            _expenseRepositorio = expenseRepo;
+            _expenseService = expenseService;
         }
 
         [HttpGet]    
         [Route("GetTotalExpensesPerMonth/")]  
         [Authorize]
-          public APIExpenseResult getTotalExpensesPerMonth()
-        {
-            APIExpenseResult result = new APIExpenseResult();
+        public ActionResult<List<Expense>> getTotalExpensesPerMonth()
+        {          
+            List<Expense> lst  = _expenseService.getTotalExpensesPerMonth();    
 
-            try{
-                List<Expense> lst  = _expenseRepositorio.getTotalExpensesPerMonth();
-                result.lstExpense = lst;
-                result.resultCode= "OK";                
-
-            }catch(Exception ex)
+            if(lst == null)
             {
-                  result.resultCode= "ERROR";    
-                  result.resultDescription = ex.Message;
+                return NotFound();
             }
-        
 
-            return result;
+            return Ok(lst);         
+
+            
         }
 
         [HttpGet]
         [Route("GetTotalExpensesPerCategory/")]
         [Authorize]
-        public APIExpenseResult getTotalExpensesPerCategory()
+        public ActionResult<List<Expense>> getTotalExpensesPerCategory()
         {
-            APIExpenseResult result = new APIExpenseResult();
+            List<Expense> lst  = _expenseService.getTotalExpensesPerCategory();    
 
-            try{
-                List<Expense> lst  = _expenseRepositorio.getTotalExpensesPerCategory();
-                result.lstExpense = lst;
-                result.resultCode= "OK";                
-
-            }catch(Exception ex)
+            if(lst == null)
             {
-                  result.resultCode= "ERROR";    
-                  result.resultDescription = ex.Message;
+                return NotFound();
             }
-        
 
-            return result;
+            return Ok(lst);         
+
         }
 
         [HttpGet]
         [Route("GetPaymentPerSource/")]
         [Authorize]
-        public APIExpenseResult getPaymentPerSource()
+        public ActionResult<List<Expense>> getPaymentPerSource()
         {
-            APIExpenseResult result = new APIExpenseResult();
+            List<Expense> lst  = _expenseService.getPaymentPerSource();    
 
-            try{
-                
-                List<Expense> lst  = _expenseRepositorio.getPaymentPerSource();
-                result.lstExpense = lst;
-                result.resultCode= "OK";                
-
-            }catch(Exception ex)
+            if(lst == null)
             {
-                  result.resultCode= "ERROR";    
-                  result.resultDescription = ex.Message;
-            }        
+                return NotFound();
+            }
 
-            return result;
+            return Ok(lst);         
 
             
         }

@@ -69,7 +69,7 @@ export class ReportByMonthComponent implements OnDestroy, OnInit {
     this.expenseService.getReportPerMonth()
       .subscribe(expenses => {     
 
-        this.expenses = expenses.lstExpense;
+        this.expenses = expenses;
 
         this.feedChart(this.expenses);
 

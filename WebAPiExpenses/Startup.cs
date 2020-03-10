@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WebAPiExpenses.Service;
 using WebAPiExpenses.Repository;
 
 namespace WebAPiExpenses
@@ -36,6 +37,7 @@ namespace WebAPiExpenses
             });
              
 
+            services.AddTransient<IExpenseService,ExpenseService>();
             services.AddTransient<IExpenseRepository,ExpenseRepository>();
             services.AddTransient<IUserRepository,UserRepository>();
 

@@ -67,7 +67,7 @@ export class ReportByCategoryComponent implements OnInit {
     this.expenseService.getReportTotalExpensesPerCategory()
       .subscribe(expenses => {
 
-        this.expenses = expenses.lstExpense;
+        this.expenses = expenses;
 
         this.feedChart(this.expenses);
 

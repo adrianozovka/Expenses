@@ -60,7 +60,7 @@ export class ReportBySourceComponent implements OnInit {
     this.expenseService.getReportPaymentPerSource()
       .subscribe(expenses => {
 
-        this.expenses = expenses.lstExpense;
+        this.expenses = expenses;
 
         this.feedChart(this.expenses);
 
