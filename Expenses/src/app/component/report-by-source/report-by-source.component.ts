@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ExpenseService } from '../../app/services/expense.service'
-import { Expenses } from '../../app/model/expenses.model';
+import { ExpenseService } from './../../services/expense.service';
+import { Expenses } from './../../model/expenses.model';
 
 
 @Component({

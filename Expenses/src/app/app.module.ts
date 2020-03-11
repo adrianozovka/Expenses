@@ -3,23 +3,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ReportByMonthComponent } from './report-by-month/report-by-month.component';
+import { ReportByMonthComponent } from './component/report-by-month/report-by-month.component';
 import { ExpenseService } from '../app/services/expense.service';
 import { DataTablesModule } from 'angular-datatables';
 import { BlockUIModule } from 'ng-block-ui';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChartModule } from 'primeng/chart';
-import { HomeComponent } from './home/home.component';
-import { NotfoundComponent } from './notfound/notfound.component';
+import { HomeComponent } from './component/home/home.component';
+import { NotfoundComponent } from './component/notfound/notfound.component';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { LoginService } from './services/login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { LoggedInGuard } from './security/loggedin.guard';
 
 import { ROUTES } from './app.routes';
-import { HeaderComponent } from './header/header.component';
-import { ReportByCategoryComponent } from './report-by-category/report-by-category.component';
-import { ReportBySourceComponent } from './report-by-source/report-by-source.component'
+import { HeaderComponent } from './component/header/header.component';
+import { ReportByCategoryComponent } from './component/report-by-category/report-by-category.component';
+import { ReportBySourceComponent } from './component/report-by-source/report-by-source.component'
 
 @NgModule({
   declarations: [
