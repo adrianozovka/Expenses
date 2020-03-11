@@ -40,3 +40,8 @@ C:\Codigo\WebAPiExpenses\obj\Debug\netcoreapp3.1\staticwebassets\WebAPiExpenses.
 C:\Codigo\WebAPiExpenses\obj\Debug\netcoreapp3.1\staticwebassets\WebAPiExpenses.StaticWebAssets.xml
 C:\Codigo\WebAPiExpenses\obj\Debug\netcoreapp3.1\WebAPiExpenses.dll
 C:\Codigo\WebAPiExpenses\obj\Debug\netcoreapp3.1\WebAPiExpenses.pdb
+C:\Codigo\WebAPiExpenses\bin\Debug\netcoreapp3.1\publish\publish\publish\web.config
+C:\Codigo\WebAPiExpenses\bin\Debug\netcoreapp3.1\publish\publish\publish\appsettings.Development.json
+C:\Codigo\WebAPiExpenses\bin\Debug\netcoreapp3.1\publish\publish\publish\appsettings.json
+C:\Codigo\WebAPiExpenses\bin\Debug\netcoreapp3.1\publish\publish\publish\WebAPiExpenses.deps.json
+C:\Codigo\WebAPiExpenses\bin\Debug\netcoreapp3.1\publish\publish\publish\WebAPiExpenses.runtimeconfig.json

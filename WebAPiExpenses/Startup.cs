@@ -53,7 +53,7 @@ namespace WebAPiExpenses
             });
 
             // Bearer token was implemented to authenticate
-            var key = Encoding.ASCII.GetBytes(Setting.Secret);
+            var key = Encoding.ASCII.GetBytes(Configuration.GetSection("SecretTokenKey").Value);
             services.AddAuthentication(
                     x => {
                         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
