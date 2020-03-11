@@ -29,15 +29,11 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 
 ```shell
 npm install
-ng build --prod
 ```
 
-The `ng build --prod` command builds (compiles TypeScript and copies assets) the application into `dist/` to publish.
-But watches for changes to the source files, and runs localhost `lite-server` on port `4200`, execute ng serve.
+To watches for changes to the source files, and runs localhost on port `4200`, execute ng serve.
 
 ```shell
-npm install
-ng build --prod
 ng serve
 ```
 
