@@ -95,7 +95,7 @@ Command `cf` will be used.
 
 -------------------------------------------------------------------------------
 
-### Angular
+### WebApi
 
 ```shell
 To access the project root folder
@@ -112,7 +112,7 @@ In this case, url created was webapiexpenses.cfapps.io
 
 ----------------------------------------------------------------------------
 
-### WebApi
+### Angular
 To access the project root folder
 
 ```shell
