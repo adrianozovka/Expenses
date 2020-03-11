@@ -37,7 +37,7 @@ Run localhost on port `4200`, execute ng serve.
 ng serve
 ```
 
-### Up WebAPI ( Backend )
+### Up WebAPI (Backend)
 
 change folder one level, build project and run project on localhost port 5000 via http protocol
 
