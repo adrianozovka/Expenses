@@ -36,19 +36,21 @@ namespace WebAPiExpenses
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
             });
              
-
+            // Injection was created to use in services snd controllers
             services.AddTransient<IExpenseService,ExpenseService>();
             services.AddTransient<IExpenseRepository,ExpenseRepository>();
             services.AddTransient<IUserRepository,UserRepository>();
 
 			services.AddControllers();
 
+            // Swagger to documentation
             services.AddSwaggerGen(c =>
             {
                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPiExpenses", Version = "v1" });
                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
             });
 
+            // Bearer token was implemented to authenticate
             var key = Encoding.ASCII.GetBytes(Setting.Secret);
             services.AddAuthentication(
                     x => {
@@ -92,6 +94,7 @@ namespace WebAPiExpenses
 
             app.UseRouting();
 
+            // middleware from swagger, could be set in env.IsDevelopment().
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
@@ -100,6 +103,7 @@ namespace WebAPiExpenses
             });
 
              
+            // middleware from authentication 
             app.UseAuthentication();
 
             app.UseAuthorization();      

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core"
 import { HttpClient, HttpHeaders } from "@angular/common/http"
-import { Expenses, APIExpenseResult } from "../model/expenses.model";
+import { Expenses } from "../model/expenses.model";
 import { URL_API } from "../app.api"
 import { Observable } from "rxjs/Observable";
 import { LoginService } from '../services/login.service'

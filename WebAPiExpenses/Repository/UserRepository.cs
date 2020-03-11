@@ -6,6 +6,7 @@ namespace WebAPiExpenses.Repository
 {
     public class UserRepository : IUserRepository
     {
+            // In this solution, we dont have database, Static users was created to complete the authentication.
             public User Get(string username, string password)
             {
                 var  users = new List<User>() ;

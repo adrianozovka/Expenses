@@ -1,6 +1,6 @@
 # Webapi .Net Core 3.1 + Angular
 
-This is a test project to demonstrate using Angular 8 + WebApi Core 3.1.
+This is a test project to demonstrate Web Solution using Angular 8 + WebApi Core 3.1 addressed in the CESAR challenge.
 
 ## Get started
 
@@ -23,7 +23,7 @@ git clone https://github.com/adrianozovka/Expenses.git
 cd Expenses
 ```
 
-### Install npm packages ( Angular FrontEnd)
+### Install npm packages and UP (Angular FrontEnd)
 
 Install the `npm` packages described in the `package.json` and verify that it works:
 
@@ -31,13 +31,11 @@ Install the `npm` packages described in the `package.json` and verify that it wo
 npm install
 ```
 
-To watches for changes to the source files, and runs localhost on port `4200`, execute ng serve.
+Run localhost on port `4200`, execute ng serve.
 
 ```shell
 ng serve
 ```
-
-Case necessary, shut it down manually with `Ctrl-C`.
 
 ### Up WebAPI ( Backend )
 
@@ -49,7 +47,6 @@ cd WebAPiExpenses
 dotnet build
 dotnet run
 ```
-Case necessary, shut it down manually with `Ctrl-C`.
 
 
 ## Access website local
@@ -84,15 +81,13 @@ To documentation, the compodoc has resource to create a great view to show how t
 The documentation is avaliable on link:
 http://expenses2017.cfapps.io/documentation/
 
-
-
 ## Deploying
 
-To deploy using the Pivotal platform, its necessary to install the  client CF on link below:
+To deploy using the Pivotal platform, it's necessary to install the  client CF on link below:
 
 https://tanzu.vmware.com/tutorials/getting-started/install-the-cf-cli
 
-Command `cf` will be used.
+Command `cf` will be used in next steps.
 
 -------------------------------------------------------------------------------
 
@@ -137,4 +132,6 @@ cf push
 after completed, the url mentioned in the routes is your app url.
 
 In this case, url created was expenses2017.cfapps.io as mentioned in manifest.yml
+
+Okay, the deploy was completed.
 

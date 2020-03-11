@@ -9,6 +9,7 @@ namespace WebAPiExpenses.Service
 {
     public static class TokenService
     {
+        // It was created Role claim, but it's not applied in this solution. It's implemented case needs to use in the future.        
         public static string GenerateToken(User user){
 
             var tokenHandler = new JwtSecurityTokenHandler();

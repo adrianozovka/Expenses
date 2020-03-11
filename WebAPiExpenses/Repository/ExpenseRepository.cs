@@ -12,6 +12,7 @@ namespace WebAPiExpenses.Repository
     {
 
 
+        //The Lists below is static, because it's considered the data wont change. Once list was loaded, its not necessary consult RestAPI again. There are gain in performance.
          static List<Expense> lstTotalExpensesPerMonth;
          static List<Expense> lstTotalExpensesPerCategory;
          static List<Expense> lstPaymentPerSource;
@@ -26,6 +27,8 @@ namespace WebAPiExpenses.Repository
                 lst =  APIClient.getPaymentPerSource();
 
                 lstPaymentPerSource =  new List<Expense>();
+
+                // The Prefeitura API dont has resource to group the information per Source, in this case, it was necessary to use Linq the code below to return in another List.
                 try
                 {      
                     if(lst != null)             
@@ -82,7 +85,8 @@ namespace WebAPiExpenses.Repository
                 try
                 {
                      if(lst != null)
-                    {                        
+                    {           
+                        // The Prefeitura API dont has resource to group the information per Category, in this case, it was necessary to use Linq the code below to return in another List.             
                         var lstGrouped = lst.GroupBy(
                             x => new { x.categoryCode, x.categoryName }, (key, group) => new
                             {
@@ -133,7 +137,7 @@ namespace WebAPiExpenses.Repository
                 {
                     if(lst != null)
                     {
-                        
+                        // The Prefeitura API dont has resource to group the information per Month, in this case, it was necessary to use Linq the code below to return in another List.
                         var lstGrouped = lst.GroupBy(
                             x => new { x.movimentYear, x.movimentMonth }, (key, group) => new
                             {
