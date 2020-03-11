@@ -4,6 +4,18 @@ This is a test project to demonstrate using Angular 8 + WebApi Core 3.1.
 
 ## Get started
 
+### Access the solution on production environment.
+
+```shell
+Access link: http://expenses2017.cfapps.io/
+Inform username: adriano@gmail.com
+Inform password: adriano
+```
+
+----------------------------------------------------------------------------
+
+## Step by Step
+
 ### Clone the repo
 
 ```shell
@@ -43,14 +55,14 @@ dotnet run
 Case necessary, shut it down manually with `Ctrl-C`.
 
 
-## Access website
+## Access website local
 
 With Backend and Frontend up, run browser on http://localhost:4200
 Inform `Username`: adriano@gmail.com and `Password`: adriano
 
-### Techniques
+## Techniques
 
-## WebAPI
+### WebAPI
 
 In WebApi Core 3.1, to access the webmethod, it's necessary to use Bearer Token to authenticate.
 
@@ -62,7 +74,7 @@ To access Rest API from Prefeitura do Recife, it was added RestClient file on Ut
 
 To access the documentation by swagger, check in this link: https://webapiexpenses.cfapps.io/swagger/index.html
 
-## Angular
+### Angular
 
 In this solution, it was included somes components avaliable on site https://primefaces.org/primeng/showcase/#/
 
@@ -77,9 +89,9 @@ http://expenses2017.cfapps.io/documentation/
 
 
 
-### Deploying
+## Deploying
 
-## Angular
+### Angular
 
 ```shell
 To access the project root folder
@@ -96,7 +108,7 @@ In this case, url created was webapiexpenses.cfapps.io
 
 ----------------------------------------------------------------------------
 
-## WebApi
+### WebApi
 To access the project root folder
 
 ```shell
