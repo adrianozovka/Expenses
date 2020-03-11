@@ -45,6 +45,7 @@ change folder one level, build project and run project on localhost port 5000 vi
 
 ```shell
 cd..
+cd WebAPiExpenses
 dotnet build
 dotnet run
 ```
