@@ -12,13 +12,22 @@ using WebAPiExpenses.Util;
 using WebAPiExpenses;
 using System.Net.Http;
 using System.Net;
+using Microsoft.Extensions.Configuration;
 
 namespace WebApiExpenses.ApiClient
 {
     public static class APIClient
     {
-        private static string _urlBase =  Setting.HostQuery;
-        static RestClient client = new RestClient(_urlBase);
+        static string _urlBase = "";
+
+          static RestClient client = new RestClient(_urlBase);
+
+        internal  static void SettingUrlBase(string urlBase){
+                _urlBase = urlBase;
+                client = new RestClient(_urlBase);
+        }
+
+      
 
       
         internal static List<ExpenseAPI> getTotalExpensesPerMonth()

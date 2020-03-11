@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using Microsoft.Extensions.Configuration;
 using WebApiExpenses.ApiClient;
 using WebApiExpenses.Model;
 using WebAPiExpenses.Util;
@@ -12,10 +13,18 @@ namespace WebAPiExpenses.Repository
     {
 
 
+        IConfiguration _iConfig;
+
         //The Lists below is static, because it's considered the data wont change. Once list was loaded, its not necessary consult RestAPI again. There are gain in performance.
          static List<Expense> lstTotalExpensesPerMonth;
          static List<Expense> lstTotalExpensesPerCategory;
          static List<Expense> lstPaymentPerSource;
+
+        public ExpenseRepository(IConfiguration iConfig)
+        {
+            _iConfig = iConfig;
+           APIClient.SettingUrlBase(_iConfig.GetSection("AppSettings").GetSection("UrlAPIClient").Value);
+        }
 
         public List<Expense> getPaymentPerSource()
         {        

@@ -35,6 +35,8 @@ namespace WebAPiExpenses
             {  
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
             });
+
+    
              
             // Injection was created to use in services snd controllers
             services.AddTransient<IExpenseService,ExpenseService>();
