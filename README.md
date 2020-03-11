@@ -16,7 +16,7 @@ Inform password: adriano
 
 ## Step by Step
 
-### Clone the repo
+### Clone the repo on Github
 
 ```shell
 git clone https://github.com/adrianozovka/Expenses.git
@@ -86,6 +86,14 @@ http://expenses2017.cfapps.io/documentation/
 
 
 ## Deploying
+
+To deploy using the Pivotal platform, its necessary to install the  client CF on link below:
+
+https://tanzu.vmware.com/tutorials/getting-started/install-the-cf-cli
+
+Command `cf` will be used.
+
+-------------------------------------------------------------------------------
 
 ### Angular
 
